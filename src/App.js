@@ -1,24 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from 'react'
+import Post from './components/Post'
+import AddPost from './components/AddPost'
+import Head from './components/Head'
+import PostPage from './pages/PostPage'
+import axios from 'axios'
+// styles
+import './style.sass'
+// router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation
+} from "react-router-dom"
 
 function App() {
+
+  const [posts, setPosts] = useState([])
+  const [post, setPost] = useState([])
+  const [postTitle, setPostTitle] = useState('')
+  const [postText, setPostText] = useState('')
+  const [isLogged, setIsLogged] = useState(false)
+
+  useEffect( async () => {
+    const data = await axios.get("http://localhost:4000/posts")
+    setPosts(data.data)
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Head
+          isLogged={isLogged}
+          setIsLogged={setIsLogged} />
+        <Switch>
+          <Route path="/" exact>
+            {isLogged && (
+              <AddPost
+                posts={posts}
+                setPosts={setPosts}
+                postTitle={postTitle}
+                setPostTitle={setPostTitle}
+                postText={postText}
+                setPostText={setPostText}
+              />
+            )}
+            <div className="posts-row">
+              {posts.slice(0).reverse().map(post => (
+                <Post
+                  key={post.id}
+                  id={post.id}
+                  postTitle={post.title}
+                  postText={post.text}
+                  posts={posts}
+                  isLogged={isLogged}
+                  setPosts={setPosts}
+                  />
+              ))}
+            </div>
+          </Route>
+          <Route path="/posts/:id" exact>
+            <PostPage
+              post={post}
+              setPost={setPost}
+            />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

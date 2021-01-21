@@ -1,0 +1,91 @@
+*
+  box-sizing: border-box
+body
+  padding: 0
+  margin: 0
+  font-family: 'Roboto', sans-serif
+a
+  text-decoration: none
+.App
+  max-width: 1140px
+  padding: 0 1rem
+  margin: auto
+.add-post
+  width: 50%
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  textarea
+    margin: 1rem 0
+    width: 100%
+    resize: none
+    padding: .5rem 1rem
+    border-radius: .5rem
+    border: 1px solid #adadad
+  input
+    width: 100%
+    padding: .5rem 1rem
+    border-radius: .5rem
+    border: 1px solid #adadad
+  button
+    background: #2F66A9
+    border: none
+    height: 2rem
+    padding: 0 1rem
+    color: #FFF
+    cursor: pointer
+    font-family: 'Roboto'
+    border-radius: .25rem
+.posts-row
+  width: 100%
+  display: flex
+  margin-top: 2rem
+  flex-wrap: wrap
+.post
+  width: 25%
+  border: 1px solid #eee
+  padding: 1rem
+  position: relative
+  margin-bottom: 1rem
+  strong
+    text-transform: capitalize
+    font-family: 'Bodoni Moda', serif
+    color: black
+  button
+    padding: 0
+    border: none
+    background: none
+    cursor: pointer
+    position: absolute
+    top: .5rem
+    right: .5rem
+.header
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 2rem 0
+  border-bottom: 1px solid #eee
+  h1
+    font-family: 'Bodoni Moda', serif
+    margin: 0
+    color: black
+  button
+    font-weight: bold
+    padding: 0
+    border: none
+    background: none
+    cursor: pointer
+    font-family: 'Roboto', sans-serif
+    color: #2F66A9
+    font-size: 1rem
+.post-page
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  h1
+    text-transform: capitalize
+    font-family: 'Bodoni Moda', serif
+    margin: 1.5rem 0
+    border-bottom: 3px solid #2F66A9
+    padding-bottom: 0.25rem
