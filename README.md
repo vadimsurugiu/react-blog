@@ -1,3 +1,7 @@
+# Starting the local json server
+In the project directory, run: 
+### `json-server --watch -p 4000 db.json`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
