@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
-import Post from './components/Post'
 import AddPost from './components/AddPost'
 import Head from './components/Head'
+import Posts from './components/Posts'
 import PostPage from './pages/PostPage'
 import axios from 'axios'
 // styles
@@ -46,17 +46,10 @@ function App() {
               />
             )}
             <div className="posts-row">
-              {posts.slice(0).reverse().map(post => (
-                <Post
-                  key={post.id}
-                  id={post.id}
-                  postTitle={post.title}
-                  postText={post.text}
-                  posts={posts}
-                  isLogged={isLogged}
-                  setPosts={setPosts}
-                  />
-              ))}
+            <Posts
+              isLogged={isLogged}
+              posts={posts}
+              setPosts={setPosts} />
             </div>
           </Route>
           <Route path="/posts/:id" exact>
