@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "My first post",
+      "text": "This is my first post, welcome to my blog."
+    },
+    {
+      "id": "2",
+      "title": "Breakfast",
+      "text": "Today I ate tea with porridge for breakfast, it was okay."
+    },
+    {
+      "id": "56287333-b62e-477d-aa83-e13437bf48bc",
+      "title": "I made a blog",
+      "text": "I made a blog app that saves data in the local db."
+    },
+    {
+      "id": "dcc51d40-1a95-4c77-833c-47106682e9c6",
+      "title": "Delete posts",
+      "text": "I added the functionality to remove posts to my blog."
+    },
+    {
+      "id": "ad1c869a-17d0-4eeb-a3f9-b671fa41c5c2",
+      "title": "Test post",
+      "text": "123"
+    },
+    {
+      "id": "cf481da8-5060-44a6-9fac-cbf846d68a23",
+      "title": "Github",
+      "text": "I added my app to github\n"
+    }
+  ]
+}
